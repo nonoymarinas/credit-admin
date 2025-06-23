@@ -1,0 +1,19 @@
+﻿.print-main-bg{
+    overflow:visible !important;
+    height:auto !important;
+}
+.footer-main-cont {
+    position: fixed;
+    bottom: 0;
+    width:100%;
+}
+.quote-print-main-cont {
+    overflow: visible !important;
+    height: auto !important;
+}
+
+@page {
+    margin: 0;
+    size: A4 portrait;
+}
+

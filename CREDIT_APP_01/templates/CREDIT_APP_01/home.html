@@ -1,17 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8" />
-    <title>title</title>
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'CREDIT_APP_01/styles.css' %}">
-</head>
-<body>
-    <h1>THIS IS HOME PAGE</h1>
-    
-    <script src="{% static 'CREDIT_APP_01/scripts.js' %}"></script>
-</body>
-<footer>
-    @{{year}} Copyright: <a href="https://www.example.com">Example Company</a>
-</footer>
-</html>
+{% extends "sub_layout.html" %}
+
+{% block subcontent %}
+  <div class="home-main-cont">
+    <h1 class="home-main-title">Welcome to CREDIT_APP_01</h1>
+    <p class="home-main-description">This is the home page of the CREDIT_APP_01 application.</p>
+    <img class="home-logo-img" src="/icon/logo/196.png" alt="CREDIT_APP_01 Logo" />
+  </div>
+{% endblock %}
