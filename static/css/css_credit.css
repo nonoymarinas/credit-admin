@@ -1,0 +1,30 @@
+.page-main-cont{
+    padding: 1rem;
+    background: #f9f9f9;
+    border: 1px solid #eee;
+}
+.home-title-h2{
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.home-title-h1{
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.input-label-cont{
+    margin-bottom: 1rem;
+}
+.input-label{
+    font-size: .95rem;
+    font-weight: regular;
+    color: #585858;
+}

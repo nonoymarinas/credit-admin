@@ -12,8 +12,8 @@
         <div class="burger-menu-lines"></div>
         <div class="burger-menu-lines"></div>
       </div>
-      <h3 class="sublayout-header-main-title-text">Sales Management Systems v1.0</h3>
-      <img class="sublayout-comp-logo-img" src="/icon/logo/196.png" />
+      <h3 class="sublayout-header-main-title-text">{% block pagetitle %}{% endblock pagetitle %}</h3>
+      {% comment %} <img class="sublayout-comp-logo-img" src="/icon/logo/196.png" /> {% endcomment %}
       <div class="main-menu-main-cont max-width-zero jsMainMenuMainCont">
         <div class="menu-profile-main-cont">
           <svg class="menu-profile-icon" height="80px" width="80px" viewBox="0 0 448 512">
@@ -45,11 +45,11 @@
                 <svg class="menu-li-icon" height="20px" viewBox="0 0 384 512">
                   <path d="M64 0C28.7 0 0 28.7 0 64L0 448c0 35.3 28.7 64 64 64l256 0c35.3 0 64-28.7 64-64l0-288-128 0c-17.7 0-32-14.3-32-32L224 0 64 0zM256 0l0 128 128 0L256 0zM80 64l64 0c8.8 0 16 7.2 16 16s-7.2 16-16 16L80 96c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64l64 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-64 0c-8.8 0-16-7.2-16-16s7.2-16 16-16zm16 96l192 0c17.7 0 32 14.3 32 32l0 64c0 17.7-14.3 32-32 32L96 352c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32zm0 32l0 64 192 0 0-64L96 256zM240 416l64 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-64 0c-8.8 0-16-7.2-16-16s7.2-16 16-16z" />
                 </svg>
-                <label class="menu-main-li-label">Quotations</label>
+                <label class="menu-main-li-label">Credit</label>
               </div>
               <ul class="menu-sub-ul display-none">
-                <li class="menu-sub-li jsNewQuotationMenuLi">New Quotation</li>
-                <li class="menu-sub-li jsQuotationsListMenuLi">Quotations List</li>
+                <li class="menu-sub-li jsNewQuotationMenuLi"><a href="{% url 'newcredit' %}">New Credit</a></li>
+                <li class="menu-sub-li jsQuotationsListMenuLi"><a href="#">Credit Records</a></li>
               </ul>
             </li>
 
@@ -58,11 +58,11 @@
                 <svg class="menu-li-icon" height="20px" viewBox="0 0 384 512">
                   <path d="M64 0C28.7 0 0 28.7 0 64L0 448c0 35.3 28.7 64 64 64l256 0c35.3 0 64-28.7 64-64l0-288-128 0c-17.7 0-32-14.3-32-32L224 0 64 0zM256 0l0 128 128 0L256 0zM80 64l64 0c8.8 0 16 7.2 16 16s-7.2 16-16 16L80 96c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64l64 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-64 0c-8.8 0-16-7.2-16-16s7.2-16 16-16zm16 96l192 0c17.7 0 32 14.3 32 32l0 64c0 17.7-14.3 32-32 32L96 352c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32zm0 32l0 64 192 0 0-64L96 256zM240 416l64 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-64 0c-8.8 0-16-7.2-16-16s7.2-16 16-16z" />
                 </svg>
-                <label class="menu-main-li-label">Products</label>
+                <label class="menu-main-li-label">Payments</label>
               </div>
               <ul class="menu-sub-ul display-none">
-                <li class="menu-sub-li jsNewProductsMenuLi">New Products</li>
-                <li class="menu-sub-li jsProductsListMenuLi">Products List</li>
+                <li class="menu-sub-li jsNewProductsMenuLi">New Payments</li>
+                <li class="menu-sub-li jsProductsListMenuLi">Payments Records</li>
               </ul>
             </li>
 
