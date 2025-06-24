@@ -530,8 +530,8 @@ input::placeholder {
 
 .select-input-medium-bold-enabled {
     width: 100%;
-    /*border-radius: 5px;*/
-    border: 1px solid #999;
+    border-radius: 5px;
+    border: 1px solid #aaa;
     font-size: medium;
     padding: .4rem .6rem;
     background: #fff;
@@ -597,4 +597,15 @@ input::placeholder {
     }
 .padding-right-2rem{
     padding-right:2rem;
+}
+.input-label{
+    display: inline-block;
+    font-size: .85rem;
+    font-weight: bold;
+    color: #958f8f;
+    margin-bottom: .2rem;
+    padding: .1rem 0;
+}
+.input-label-cont{
+    margin-bottom: 1rem;
 }

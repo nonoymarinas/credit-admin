@@ -247,7 +247,7 @@ table {
     overflow:hidden;
 }
 .menu-sub-li {
-    padding: .5rem 3rem;
+    /* padding: .5rem 3rem; */
     grid-gap: .75rem;
     transition: ease-in-out .2s;
 }
@@ -255,12 +255,23 @@ table {
         background: #eee;
         color:#444;
     }
+    .menu-sub-li:hover > a {
+        color:#444;
+    }
 .menu-li-icon {
     fill: var(--whitecolor_001);
     align-self: center;
     justify-self: center;
 }
-
+.main-menu-anchor-tag{
+    text-decoration: none;
+    color: #dedede;
+    font-weight: 600;
+    font-size: .95rem;
+    display: flex;
+    align-items: center;
+    padding: .5rem 3.2rem;
+}
 .menu-main-li-label {
     font-size: 1.2rem;
     font-weight: 500;

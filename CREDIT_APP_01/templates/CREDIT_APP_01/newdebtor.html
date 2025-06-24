@@ -1,0 +1,42 @@
+{% extends 'sub_layout.html' %}
+{% block pagetitle %}
+  NEW DEBTOR
+{% endblock %}
+{% block subcontent %}
+  <div class="page-main-cont">
+    <div class="input-label-cont">
+      <label for="debtor-firstname" class="input-label">FIRST NAME</label>
+      <input type="text" id="debtor-firstname" class="select-input-medium-bold-enabled jsNonSelectInput jsGeneralInfoDeliveryInput"  autocomplete="off" required />
+    </div>
+    <div class="input-label-cont">
+      <label for="debtor-middlename" class="input-label">MIDDLE NAME</label>
+      <input id="debtor-middlename" class="select-input-medium-bold-enabled jsNonSelectInput jsGeneralInfoDeliveryInput"  autocomplete="off" required />
+    </div>
+    <div class="input-label-cont">
+      <label for="debtor-lastname" class="input-label">LAST NAME</label>
+      <input id="debtor-lastname" class="select-input-medium-bold-enabled jsNonSelectInput jsGeneralInfoDeliveryInput"  autocomplete="off" required />
+    </div>
+    <div class="input-label-cont">
+      <label for="debtor-suffix" class="input-label">SUFFIX</label>
+      <div class="input-select-cont jsSelectInputCont">
+        <input id="debtor-suffix" class="select-input-medium-bold-enabled jsSelectInput jsGeneralInfoDeliveryInput" placeholder="click select" autocomplete="off" required />
+        <ul class="input-search-ul display-none"></ul>
+      </div>
+    </div>
+    <div class="input-label-cont">
+      <label for="debtor-gender" class="input-label">GENDER</label>
+      <div class="input-select-cont jsSelectInputCont">
+        <input id="debtor-gender" class="select-input-medium-bold-enabled jsSelectInput jsGeneralInfoDeliveryInput" placeholder="click select" autocomplete="off" required />
+        <ul class="input-search-ul display-none"></ul>
+      </div>
+    </div>
+    <div class="input-label-cont">
+      <label for="debtor-dateofbirth" class="input-label">DATE OF BIRTH</label>
+      <input type="date" id="debtor-dateofbirth" class="select-input-medium-bold-enabled jsNonSelectInput jsGeneralInfoDeliveryInput" autocomplete="off" required />
+    </div>
+    <div class="input-label-cont">
+      <label for="debtor-civilstatus" class="input-label">CIVIL STATUS</label>
+      <input id="debtor-civilstatus" class="select-input-medium-bold-enabled jsSelectInput jsGeneralInfoDeliveryInput" placeholder="click select" autocomplete="off" required />
+    </div>
+  </div>
+{% endblock %}

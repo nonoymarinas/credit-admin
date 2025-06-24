@@ -5,39 +5,26 @@
 {% block subcontent %}
   <div class="page-main-cont">
     <div class="input-label-cont">
-      <label class="input-label">Delivery</label>
+      <label class="input-label">DATE</label>
       <div class="input-select-cont jsSelectInputCont">
-        <input class="select-input-medium-bold-enabled jsSelectInput jsGeneralInfoDeliveryInput" placeholder="click select" autocomplete="off" required />
+        <input type="date" class="select-input-medium-bold-enabled jsSelectInput jsGeneralInfoDeliveryInput" placeholder="click select" autocomplete="off" required />
         <ul class="input-search-ul display-none"></ul>
       </div>
     </div>
     <div class="input-label-cont">
-      <label class="input-label">Delivery</label>
+      <label for="creditor-name" class="input-label">NAME OF CREDITOR</label>
       <div class="input-select-cont jsSelectInputCont">
-        <input class="select-input-medium-bold-enabled jsSelectInput jsGeneralInfoDeliveryInput" placeholder="click select" autocomplete="off" required />
+        <input id="creditor-name" class="select-input-medium-bold-enabled jsSelectInput jsGeneralInfoDeliveryInput" placeholder="click select" autocomplete="off" required />
         <ul class="input-search-ul display-none"></ul>
       </div>
     </div>
     <div class="input-label-cont">
-      <label class="input-label">Delivery</label>
-      <div class="input-select-cont jsSelectInputCont">
-        <input class="select-input-medium-bold-enabled jsSelectInput jsGeneralInfoDeliveryInput" placeholder="click select" autocomplete="off" required />
-        <ul class="input-search-ul display-none"></ul>
-      </div>
+      <label for="creditor-amount" class="input-label">AMOUNT</label>
+      <input id="creditor-amount" class="select-input-medium-bold-enabled jsSelectInput jsGeneralInfoDeliveryInput" placeholder="click select" autocomplete="off" required />
     </div>
     <div class="input-label-cont">
-      <label class="input-label">Delivery</label>
-      <div class="input-select-cont jsSelectInputCont">
-        <input class="select-input-medium-bold-enabled jsSelectInput jsGeneralInfoDeliveryInput" placeholder="click select" autocomplete="off" required />
-        <ul class="input-search-ul display-none"></ul>
-      </div>
-    </div>
-    <div class="input-label-cont">
-      <label class="input-label">Delivery</label>
-      <div class="input-select-cont jsSelectInputCont">
-        <input class="select-input-medium-bold-enabled jsSelectInput jsGeneralInfoDeliveryInput" placeholder="click select" autocomplete="off" required />
-        <ul class="input-search-ul display-none"></ul>
-      </div>
+      <label for="creditor-terms" class="input-label">TERMS OF PAYMENTS</label>
+      <input id="creditor-terms" class="select-input-medium-bold-enabled jsSelectInput jsGeneralInfoDeliveryInput" placeholder="click select" autocomplete="off" required />
     </div>
   </div>
 {% endblock %}

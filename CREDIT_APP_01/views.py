@@ -16,3 +16,11 @@ def newcredit(request):
         # Log the exception or handle it as needed
         print(f"An error occurred: {e}")
         return render(request, 'CREDIT_APP_01/error.html', {'error': str(e)})
+
+def newdebtor(request):
+    try:
+        return render(request, 'CREDIT_APP_01/newdebtor.html')
+    except Exception as e:
+        # Log the exception or handle it as needed
+        print(f"An error occurred: {e}")
+        return render(request, 'CREDIT_APP_01/error.html', {'error': str(e)})
