@@ -198,12 +198,10 @@ table {
 
 .menu-main-li:hover {
   background: #ffffff3b;
-  box-shadow: 0 0 0.5rem 0.1rem #ababab;
 }
 
 .menu-main-li:active {
   background: #ffffff3b;
-  box-shadow: none;
 }
 .menu-main-li-with-sub-li {
   grid-gap: 0.75rem;
