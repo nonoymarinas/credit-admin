@@ -59,18 +59,6 @@ table {
   border-collapse: collapse;
 }
 
-.thead-main-layout {
-  /*display: none;*/
-}
-
-.tfoot-main-layout {
-  /*display: none;*/
-}
-
-.main-content-td {
-  /*background: blue;*/
-}
-
 .mainlayout-main-cont {
   min-height: 100vh;
   background: var(--primary_white_100);
