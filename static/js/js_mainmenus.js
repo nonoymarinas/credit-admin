@@ -119,30 +119,30 @@ dashboardMenus.prototype.handleClickDashboardMenu = async function () {
 };
 
 
-function quotationMenus() {
-    this.handleClickQuotationsMenu = this.handleClickQuotationsMenu.bind(this);
+function debtorMenus() {
+    this.handleClickDebtorMenu = this.handleClickDebtorMenu.bind(this);
     this.handleClickNewQuotationMenu = this.handleClickNewQuotationMenu.bind(this);
     this.handleClickQuotationsListMenu = this.handleClickQuotationsListMenu.bind(this);
 
-    this.enableMainMenuQuotations();
+    this.enableMainMenuDebtor();
     this.enableSubMenuNewQuotation();
     this.enableSubMenuRecordsMenu();
 }
 
-quotationMenus.prototype.enableMainMenuQuotations = function () {
-    this.quotationsMenuLi = document.querySelector('.jsQuotationsMenuLi');
-    if (!this.quotationsMenuLi) {
-        console.warn('Element ".jsQuotationsMenuLi" not found.');
+debtorMenus.prototype.enableMainMenuDebtor = function () {
+    this.debtorMenuLi = document.querySelector('.jsDebtorMenuLi');
+    if (!this.debtorMenuLi) {
+        console.warn('Element ".jsDebtorMenuLi" not found.');
         return;
     }
-    this.quotationsMenuLi.addEventListener('click', this.handleClickQuotationsMenu);
+    this.debtorMenuLi.addEventListener('click', this.handleClickDebtorMenu);
 }
 
-quotationMenus.prototype.handleClickQuotationsMenu = function (e) {
+debtorMenus.prototype.handleClickDebtorMenu = function (e) {
     this.toggleSubli(e);
 }
 
-quotationMenus.prototype.toggleSubli = function (e) {
+debtorMenus.prototype.toggleSubli = function (e) {
     const ul = e.currentTarget.querySelector('ul');
     if (ul) {
         ul.classList.toggle('display-none');
@@ -151,7 +151,7 @@ quotationMenus.prototype.toggleSubli = function (e) {
     }
 }
 
-quotationMenus.prototype.enableSubMenuNewQuotation = function () {
+debtorMenus.prototype.enableSubMenuNewQuotation = function () {
     this.newQuotationMenuLi = document.querySelector('.jsNewQuotationMenuLi');
     if (!this.newQuotationMenuLi) {
         console.warn('Element ".jsNewQuotationMenuLi" not found.');
@@ -160,13 +160,13 @@ quotationMenus.prototype.enableSubMenuNewQuotation = function () {
     this.newQuotationMenuLi.addEventListener('click', this.handleClickNewQuotationMenu);
 }
 
-quotationMenus.prototype.handleClickNewQuotationMenu = async function (e) {
+debtorMenus.prototype.handleClickNewQuotationMenu = async function (e) {
     globalBurgerMenu.toggleMainMenus();
     var newQuotation = new mainQuotation();
     await newQuotation.showNewQuotationInterfaces();
 }
 
-quotationMenus.prototype.enableSubMenuRecordsMenu = function () {
+debtorMenus.prototype.enableSubMenuRecordsMenu = function () {
     this.quotationsListMenuLi = document.querySelector('.jsQuotationsListMenuLi');
     if (!this.quotationsListMenuLi) {
         console.warn('Element ".jsQuotationsListMenuLi" not found.');
@@ -175,24 +175,24 @@ quotationMenus.prototype.enableSubMenuRecordsMenu = function () {
     this.quotationsListMenuLi.addEventListener('click', this.handleClickQuotationsListMenu);
 }
 
-quotationMenus.prototype.handleClickQuotationsListMenu = async function (e) {
+debtorMenus.prototype.handleClickQuotationsListMenu = async function (e) {
     globalBurgerMenu.toggleMainMenus();
 }
 
 // Add disable methods to remove event listeners (optional but recommended)
-quotationMenus.prototype.disableMainMenuQuotations = function () {
-    if (this.quotationsMenuLi) {
-        this.quotationsMenuLi.removeEventListener('click', this.handleClickQuotationsMenu);
+debtorMenus.prototype.disableMainMenuQuotations = function () {
+    if (this.debtorMenuLi) {
+        this.debtorMenuLi.removeEventListener('click', this.handleClickDebtorMenu);
     }
 }
 
-quotationMenus.prototype.disableSubMenuNewQuotation = function () {
+debtorMenus.prototype.disableSubMenuNewQuotation = function () {
     if (this.newQuotationMenuLi) {
         this.newQuotationMenuLi.removeEventListener('click', this.handleClickNewQuotationMenu);
     }
 }
 
-quotationMenus.prototype.disableSubMenuRecordsMenu = function () {
+debtorMenus.prototype.disableSubMenuRecordsMenu = function () {
     if (this.quotationsListMenuLi) {
         this.quotationsListMenuLi.removeEventListener('click', this.handleClickQuotationsListMenu);
     }
@@ -395,7 +395,7 @@ pageCoverMenus.prototype.showMenuPageCover = function () {
     new caretButtons();
     new homeMenus();
     new dashboardMenus();
-    new quotationMenus();
+    new debtorMenus();
     new productsMenus();
     new settingMenus();
     new pageCoverMenus();

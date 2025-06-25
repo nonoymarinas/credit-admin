@@ -1,12 +1,13 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% block title %}CREDIT_ADMIN{% endblock %}</title>
-    
-    
+
+
     <link rel="stylesheet" href="{% static 'css_global_end.css' %}">
     <link rel="stylesheet" href="{% static 'css_global_start.css' %}">
     <link rel="stylesheet" href="{% static 'css_layout.css' %}">
@@ -14,18 +15,22 @@
     <link rel="stylesheet" href="{% static 'css_credit.css' %}">
     <link rel="stylesheet" href="{% static 'css_print.css' %}">
 </head>
+
 <body>
     <div class="mainlayout-main-cont jsMainLayoutCont ">
         {% block content %}
         {% endblock %}
     </div>
-     <script src="{% static 'js_global_lib.js' %}"></script>
-     <script src="{% static 'js_global_prj.js' %}"></script>
-     <script src="{% static 'js_helper_functions.js' %}"></script>
-     <script src="{% static 'js_mainmenus.js' %}"></script>
-     <script src="{% static 'js_print.js' %}"></script>
-     <script src="{% static 'js_select_inputs_products.js' %}"></script>
-     <script src="{% static 'js_select_inputs.js' %}"></script>
-     <script src="{% static 'js_windows.js' %}"></script>
+    <script src="{% static 'js_global_lib.js' %}"></script>
+    <script src="{% static 'js_global_prj.js' %}"></script>
+    <script src="{% static 'js_helper_functions.js' %}"></script>
+    <script src="{% static 'js_mainmenus.js' %}"></script>
+    <script src="{% static 'js_print.js' %}"></script>
+    <script src="{% static 'js_select_inputs_products.js' %}"></script>
+    <script src="{% static 'js_select_inputs.js' %}"></script>
+    <script src="{% static 'js_windows.js' %}"></script>
+    <script src="{% static 'js_newdebtor.js' %}"></script>
+    <!-- {% block scripts %}{% endblock %} -->
 </body>
+
 </html>
