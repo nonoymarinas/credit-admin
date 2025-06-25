@@ -233,6 +233,7 @@ table {
 }
 
 .main-menu-anchor-tag {
+  list-style: none;
   text-decoration: none;
   color: var(--primary_green_400);
   font-weight: 600;
