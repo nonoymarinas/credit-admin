@@ -186,6 +186,8 @@ table {
 
 .menu-main-ul {
   padding-top: 0.5rem;
+  list-style: none;
+  text-decoration: none;
 }
 
 .menu-main-li {
@@ -194,6 +196,7 @@ table {
   padding: 0.5rem;
   grid-gap: 0.75rem;
   transition: ease-in-out 0.2s;
+  list-style: none;
 }
 
 .menu-main-li:hover {
