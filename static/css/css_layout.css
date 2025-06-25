@@ -35,11 +35,13 @@ ul,
 ol {
   padding-left: 0;
   margin-left: 0;
+  list-style: none;
 }
 
 li::marker {
   content: none !important;
 }
+
 input[type="date"]::-webkit-calendar-picker-indicator {
   cursor: pointer;
   border-radius: 4px;
