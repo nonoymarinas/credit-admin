@@ -21,6 +21,11 @@ input[type="time"] {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  padding: 0.5rem; /* Adjust as needed */
+  height: 40px; /* Explicit height */
+  line-height: 1.2; /* Ensures text stays centered */
+  font-size: 16px; /* Prevent zooming */
+  box-sizing: border-box; /* Include padding in height */
 }
 input[type="date"]::-webkit-datetime-edit {
   color: var(--primary_grey_020); /* Change to your desired placeholder color */
