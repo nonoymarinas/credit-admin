@@ -38,10 +38,6 @@ ol {
   list-style: none;
 }
 
-li::marker {
-  content: none !important;
-}
-
 input[type="date"]::-webkit-calendar-picker-indicator {
   cursor: pointer;
   border-radius: 4px;
