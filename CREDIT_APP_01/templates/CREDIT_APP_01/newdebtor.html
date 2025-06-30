@@ -65,9 +65,11 @@
 
 {% block scripts %}
 <script>
-  window.addEventListener('load', function () {
+  window.addEventListener('load', async function () {
     const newDebtor = new newDebtors();
     newDebtor.enableSaveBtn();
+    const reference = new references();
+    await reference.getNewDeptorReferences();
   });
 </script>
 {% endblock %}

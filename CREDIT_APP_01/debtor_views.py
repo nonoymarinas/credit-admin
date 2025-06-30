@@ -1,6 +1,7 @@
 from django.http import JsonResponse
 from django.shortcuts import render
-from .services.person_services import PersonService
+from .services.persons_services import PersonService
+from .services.references_services import NewDebtorReferenceService
 
 
 # Create your views here.
@@ -36,3 +37,13 @@ def get_all_persons(request):
     persons = service.get_all_persons()
     data = [p.__dict__ for p in persons]
     return JsonResponse(data, safe=False)
+
+
+def get_new_debtor_references(request):
+    try:
+        service = NewDebtorReferenceService()
+        references = service.get_references()
+        return JsonResponse(references.to_dict())
+    except Exception as e:
+        print(f"Error in get_new_debtor_references: {e}")
+        return JsonResponse({"error": str(e)}, status=500)

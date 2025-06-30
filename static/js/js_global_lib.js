@@ -199,113 +199,192 @@ const alertCustom = {
     }
 }
 
+// const fetchData = {
+//     viewData: async function (url) {
+//         let dataResult = null;
+//         await fetch(url).then(function (res) {
+//             if (res.ok) {
+//                 return res.text()
+//             } else {
+//                 throw new Error(alertMessages.serverError)
+//             }
+//         }).then(function (data) {
+//             dataResult = new DOMParser().parseFromString(data, 'text/html')
+//         }).catch((err) => {
+//             const error = new tryCatchError(err.message);
+//             error.errorMessageType1()
+//             dataResult = null;
+//         })
+//         return dataResult;
+//     },
+
+//     getData: async function (dataUrl) {
+
+//         let dataResult = null;
+//         await fetch(dataUrl).then((res) => {
+//             if (res.ok) {
+//                 return res.json();
+//             } else {
+//                 throw new Error(alertMessages.serverError)
+//             }
+//         }).then(async (data) => {
+//             dataResult = processFetchDataResult(data)
+//         }).catch((err) => {
+//             const error = new tryCatchError(err.message);
+//             error.errorMessageType1()
+//             dataResult = null;
+//         })
+//         return dataResult
+//     },
+//     postData: async function (dataUrl, options) {
+
+//         let dataResult = null;
+//         await fetch(dataUrl, options).then((res) => {
+//             if (res.ok) {
+//                 return res.json();
+//             } else {
+//                 throw new Error(alertMessages.serverError)
+//             }
+//         }).then(async (data) => {
+//             dataResult = processFetchDataResult(data)
+//         }).catch((err) => {
+//             const error = new tryCatchError(err.message);
+//             error.errorMessageType1()
+//             dataResult = null;
+//         })
+//         return dataResult;
+
+//     },
+
+//     postViewData: async function (url, options) {
+
+//         let dataResult = null;
+//         return await fetch(url, options).then(function (res) {
+//             if (res.ok) {
+//                 return res.text()
+//             } else {
+//                 throw new Error(alertMessages.serverError)
+//             }
+//         }).then(function (data) {
+//             dataResult = new DOMParser().parseFromString(data, 'text/html')
+//         }).catch((err) => {
+//             const error = new tryCatchError(err.message);
+//             error.errorMessageType1()
+//             dataResult = null;
+//         })
+//         return dataResult;
+
+//     },
+// }
+
+// function processFetchDataResult(data) {
+//     try {
+//         if (data.hasError) {
+//             throw new Error(data.errorMessage);
+//         } else if (data.statusCodeNumber == 3) {
+//             throw new Error(alertMessages.nameExistInDatabaseAndActive);
+//         } else if (data.statusCodeNumber == 10) {
+//             throw new Error(alertMessages.nameExistInDatabaseAndNotActive)
+//         } else if (data.statusCodeNumber == 6) {
+//             throw new Error(alertMessages.nameExistInDatabaseAndBlockListed)
+//         } else if (data.statusCodeNumber == 13) {
+//             throw new Error(alertMessages.fileUploadFailed)
+//         } else if (data.statusCodeNumber == 4) {
+//             throw new Error(alertMessages.usernamePasswordNotFound)
+//         } else if (data.statusCodeNumber == 15) {
+//             throw new Error(alertMessages.incorrectPasscode)
+//         } else if (data.statusCodeNumber == 17) {
+//             throw new Error(alertMessages.youHaveNoProjectAuthority)
+//         } else if (data.statusCodeNumber == 18) {
+//             throw new Error(alertMessages.timesheetAlreadyExist)
+//         } else if (data.statusCodeNumber == 16) {
+//             throw new Error(alertMessages.projectDoesNotExist)
+//         } else if (data.statusCodeNumber == 19) {
+//             throw new Error(alertMessages.attendanceNameAlreadyExist)
+//         } else if (data.statusCodeNumber == 22) {
+//             throw new Error(alertMessages.duplicateError);
+//         } else {
+//             return data
+//         }
+//     } catch (err) {
+//         throw new Error(err.message);
+//     }
+// }
 const fetchData = {
     viewData: async function (url) {
-        let dataResult = null;
-        await fetch(url).then(function (res) {
-            if (res.ok) {
-                return res.text()
-            } else {
-                throw new Error(alertMessages.serverError)
-            }
-        }).then(function (data) {
-            dataResult = new DOMParser().parseFromString(data, 'text/html')
-        }).catch((err) => {
-            const error = new tryCatchError(err.message);
-            error.errorMessageType1()
-            dataResult = null;
-        })
-        return dataResult;
+        try {
+            const res = await fetch(url);
+            if (!res.ok) throw new Error(alertMessages.serverError);
+            const html = await res.text();
+            return new DOMParser().parseFromString(html, 'text/html');
+        } catch (err) {
+            new tryCatchError(err.message).errorMessageType1();
+            return null;
+        }
     },
 
     getData: async function (dataUrl) {
-
-        let dataResult = null;
-        await fetch(dataUrl).then((res) => {
-            if (res.ok) {
-                return res.json();
-            } else {
-                throw new Error(alertMessages.serverError)
-            }
-        }).then(async (data) => {
-            dataResult = processFetchDataResult(data)
-        }).catch((err) => {
-            const error = new tryCatchError(err.message);
-            error.errorMessageType1()
-            dataResult = null;
-        })
-        return dataResult
+        try {
+            const res = await fetch(dataUrl);
+            if (!res.ok) throw new Error(alertMessages.serverError);
+            const json = await res.json();
+            return processFetchDataResult(json);
+        } catch (err) {
+            new tryCatchError(err.message).errorMessageType1();
+            return null;
+        }
     },
+
     postData: async function (dataUrl, options) {
-
-        let dataResult = null;
-        await fetch(dataUrl, options).then((res) => {
-            if (res.ok) {
-                return res.json();
-            } else {
-                throw new Error(alertMessages.serverError)
-            }
-        }).then(async (data) => {
-            dataResult = processFetchDataResult(data)
-        }).catch((err) => {
-            const error = new tryCatchError(err.message);
-            error.errorMessageType1()
-            dataResult = null;
-        })
-        return dataResult;
-
+        try {
+            const res = await fetch(dataUrl, options);
+            if (!res.ok) throw new Error(alertMessages.serverError);
+            const json = await res.json();
+            return processFetchDataResult(json);
+        } catch (err) {
+            new tryCatchError(err.message).errorMessageType1();
+            return null;
+        }
     },
 
     postViewData: async function (url, options) {
-
-        let dataResult = null;
-        return await fetch(url, options).then(function (res) {
-            if (res.ok) {
-                return res.text()
-            } else {
-                throw new Error(alertMessages.serverError)
-            }
-        }).then(function (data) {
-            dataResult = new DOMParser().parseFromString(data, 'text/html')
-        }).catch((err) => {
-            const error = new tryCatchError(err.message);
-            error.errorMessageType1()
-            dataResult = null;
-        })
-        return dataResult;
-
-    },
-}
+        try {
+            const res = await fetch(url, options);
+            if (!res.ok) throw new Error(alertMessages.serverError);
+            const html = await res.text();
+            return new DOMParser().parseFromString(html, 'text/html');
+        } catch (err) {
+            new tryCatchError(err.message).errorMessageType1();
+            return null;
+        }
+    }
+};
 
 function processFetchDataResult(data) {
     try {
-        if (data.hasError) {
-            throw new Error(data.errorMessage);
-        } else if (data.statusCodeNumber == 3) {
-            throw new Error(alertMessages.nameExistInDatabaseAndActive);
-        } else if (data.statusCodeNumber == 10) {
-            throw new Error(alertMessages.nameExistInDatabaseAndNotActive)
-        } else if (data.statusCodeNumber == 6) {
-            throw new Error(alertMessages.nameExistInDatabaseAndBlockListed)
-        } else if (data.statusCodeNumber == 13) {
-            throw new Error(alertMessages.fileUploadFailed)
-        } else if (data.statusCodeNumber == 4) {
-            throw new Error(alertMessages.usernamePasswordNotFound)
-        } else if (data.statusCodeNumber == 15) {
-            throw new Error(alertMessages.incorrectPasscode)
-        } else if (data.statusCodeNumber == 17) {
-            throw new Error(alertMessages.youHaveNoProjectAuthority)
-        } else if (data.statusCodeNumber == 18) {
-            throw new Error(alertMessages.timesheetAlreadyExist)
-        } else if (data.statusCodeNumber == 16) {
-            throw new Error(alertMessages.projectDoesNotExist)
-        } else if (data.statusCodeNumber == 19) {
-            throw new Error(alertMessages.attendanceNameAlreadyExist)
-        } else if (data.statusCodeNumber == 22) {
-            throw new Error(alertMessages.duplicateError);
-        } else {
-            return data
+        const { statusCodeNumber, hasError, errorMessage } = data;
+
+        if (hasError) throw new Error(errorMessage);
+
+        const statusErrors = {
+            3: alertMessages.nameExistInDatabaseAndActive,
+            4: alertMessages.usernamePasswordNotFound,
+            6: alertMessages.nameExistInDatabaseAndBlockListed,
+            10: alertMessages.nameExistInDatabaseAndNotActive,
+            13: alertMessages.fileUploadFailed,
+            15: alertMessages.incorrectPasscode,
+            16: alertMessages.projectDoesNotExist,
+            17: alertMessages.youHaveNoProjectAuthority,
+            18: alertMessages.timesheetAlreadyExist,
+            19: alertMessages.attendanceNameAlreadyExist,
+            22: alertMessages.duplicateError,
+        };
+
+        if (statusErrors[statusCodeNumber]) {
+            throw new Error(statusErrors[statusCodeNumber]);
         }
+
+        return data;
     } catch (err) {
         throw new Error(err.message);
     }

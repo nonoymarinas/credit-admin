@@ -118,14 +118,13 @@ dashboardMenus.prototype.handleClickDashboardMenu = async function () {
     //    .then(data => console.log(data));
 };
 
-
 function debtorMenus() {
     this.handleClickDebtorMenu = this.handleClickDebtorMenu.bind(this);
-    this.handleClickNewQuotationMenu = this.handleClickNewQuotationMenu.bind(this);
+    this.handleClickNewDebtorMenu = this.handleClickNewDebtorMenu.bind(this);
     this.handleClickQuotationsListMenu = this.handleClickQuotationsListMenu.bind(this);
 
     this.enableMainMenuDebtor();
-    this.enableSubMenuNewQuotation();
+    this.enableSubMenuNewDebtor();
     this.enableSubMenuRecordsMenu();
 }
 
@@ -151,19 +150,20 @@ debtorMenus.prototype.toggleSubli = function (e) {
     }
 }
 
-debtorMenus.prototype.enableSubMenuNewQuotation = function () {
-    this.newQuotationMenuLi = document.querySelector('.jsNewQuotationMenuLi');
-    if (!this.newQuotationMenuLi) {
-        console.warn('Element ".jsNewQuotationMenuLi" not found.');
+debtorMenus.prototype.enableSubMenuNewDebtor = function () {
+    this.newDebtorMenuLi = document.querySelector('.jsNewDebtorMenuLi');
+    if (!this.newDebtorMenuLi) {
+        console.warn('Element ".jsNewDebtorMenuLi" not found.');
         return;
     }
-    this.newQuotationMenuLi.addEventListener('click', this.handleClickNewQuotationMenu);
+    this.newDebtorMenuLi.addEventListener('click', this.handleClickNewDebtorMenu);
 }
 
-debtorMenus.prototype.handleClickNewQuotationMenu = async function (e) {
+debtorMenus.prototype.handleClickNewDebtorMenu = async function (e) {
     globalBurgerMenu.toggleMainMenus();
-    var newQuotation = new mainQuotation();
-    await newQuotation.showNewQuotationInterfaces();
+    const reference = new references();
+    await reference.getNewDeptorReferences();
+    console.log("new debtor")
 }
 
 debtorMenus.prototype.enableSubMenuRecordsMenu = function () {
@@ -187,8 +187,8 @@ debtorMenus.prototype.disableMainMenuQuotations = function () {
 }
 
 debtorMenus.prototype.disableSubMenuNewQuotation = function () {
-    if (this.newQuotationMenuLi) {
-        this.newQuotationMenuLi.removeEventListener('click', this.handleClickNewQuotationMenu);
+    if (this.newDebtorMenuLi) {
+        this.newDebtorMenuLi.removeEventListener('click', this.handleClickNewDebtorMenu);
     }
 }
 
