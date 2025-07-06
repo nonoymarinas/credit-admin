@@ -1,6 +1,5 @@
 from django.http import JsonResponse
 from django.shortcuts import render
-from .services.persons_services import PersonService
 from .services.references_services import NewDebtorReferenceService
 
 
