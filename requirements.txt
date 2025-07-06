@@ -1,4 +1,4 @@
-# Core Django App
+# Core Django stack
 Django==5.2.3
 gunicorn
 psycopg2-binary
@@ -6,14 +6,14 @@ dj-database-url
 python-dotenv
 whitenoise==6.9.0
 
-# Optional: API & Middleware
+# API support & middleware
 djangorestframework
 django-cors-headers
 
-# Optional: Image/file support
+# Image & file support
 Pillow
 
-# Data Processing (if used)
+# Data processing
 pandas==2.3.0
 numpy==2.3.0
 prettytable==3.16.0
@@ -25,25 +25,14 @@ idna==3.10
 charset-normalizer==3.4.2
 certifi==2025.4.26
 
-# Time & formatting
+# Time & date handling
 python-dateutil==2.9.0.post0
 pytz==2025.2
 tzdata==2025.2
 
-# Unicode/table output support
+# Console & formatting utilities
 wcwidth==0.2.13
 six==1.17.0
 sqlparse==0.5.3
 asgiref==3.8.1
-
-# Optional (Flask-related — remove if unused)
-# Flask==3.1.1
-# Jinja2==3.1.6
-# MarkupSafe==3.0.2
-# Werkzeug==3.1.3
-# click==8.2.1
-# itsdangerous==2.2.0
-# blinker==1.9.0
-
-# Optional (only if using colored terminal output)
 colorama==0.4.6
