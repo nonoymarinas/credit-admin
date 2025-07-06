@@ -43,7 +43,12 @@ def get_new_debtor_references(request):
     try:
         service = NewDebtorReferenceService()
         references = service.get_references()
-        return JsonResponse(references.to_dict())
+        return JsonResponse(
+            references.to_dict(), safe=False
+        )  # ensure compatibility with list-based top-level JSON
     except Exception as e:
         print(f"Error in get_new_debtor_references: {e}")
         return JsonResponse({"error": str(e)}, status=500)
+    finally:
+        if "service" in locals():
+            service.reference_dal.close()

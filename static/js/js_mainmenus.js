@@ -161,9 +161,6 @@ debtorMenus.prototype.enableSubMenuNewDebtor = function () {
 
 debtorMenus.prototype.handleClickNewDebtorMenu = async function (e) {
     globalBurgerMenu.toggleMainMenus();
-    const reference = new references();
-    await reference.getNewDeptorReferences();
-    console.log("new debtor")
 }
 
 debtorMenus.prototype.enableSubMenuRecordsMenu = function () {

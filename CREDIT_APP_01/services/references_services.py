@@ -1,9 +1,9 @@
-from ..dal.reference_dal import ReferenceDAL
+from ..dal.reference_dal import ReferenceDal_Supabase
 
 
 class NewDebtorReferenceService:
     def __init__(self):
-        self.reference_dal = ReferenceDAL()
+        self.reference_dal = ReferenceDal_Supabase()
 
     def get_references(self):
-        return self.reference_dal.get_all()
+        return self.reference_dal.get_all_references()
