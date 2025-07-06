@@ -32,13 +32,6 @@ def newdebtor(request):
         return render(request, "CREDIT_APP_01/error.html", {"error": str(e)})
 
 
-def get_all_persons(request):
-    service = PersonService()
-    persons = service.get_all_persons()
-    data = [p.__dict__ for p in persons]
-    return JsonResponse(data, safe=False)
-
-
 def get_new_debtor_references(request):
     try:
         service = NewDebtorReferenceService()
