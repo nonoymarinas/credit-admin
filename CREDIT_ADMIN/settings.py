@@ -29,6 +29,7 @@ SECRET_KEY = "django-insecure-czdoeu*7#vcentp7307kw@e!wsq11^#8*7i1v2btn3v2x4ppwp
 DEBUG = True
 
 ALLOWED_HOSTS = [
+    "credit-admin-pxvp.onrender.com",  # 👈 your Render URL
     "credit-admin-ctdqfrh6dcc0hqew.southeastasia-01.azurewebsites.net",
     "localhost",
     "127.0.0.1",
