@@ -10,4 +10,5 @@ urlpatterns = [
         debtor_views.get_new_debtor_references,
         name="debtorreferences",
     ),
+    path("healthz/", debtor_views.health_check),
 ]
