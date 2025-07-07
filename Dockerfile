@@ -20,11 +20,11 @@ RUN pip install --upgrade pip && pip install -r requirements.txt
 # Copy project files
 COPY . .
 
-# Collect static files (optional, if you use collectstatic)
+# Collect static files (optional)
 RUN python manage.py collectstatic --noinput
 
 # Port for Fly.io
 EXPOSE 8000
 
 # Start Gunicorn
-CMD ["gunicorn", "CREDIT_ADMIN.wsgi.application", "--bind", "0.0.0.0:8000"]
+CMD ["gunicorn", "credit_app.wsgi:application", "--bind", "0.0.0.0:8000"]
