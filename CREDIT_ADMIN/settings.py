@@ -34,8 +34,8 @@ DEBUG = True
 #     "localhost",
 #     "127.0.0.1",
 # ]
-ALLOWED_HOSTS = ["*"] if os.getenv("FLY_ENV") else []
-
+# ALLOWED_HOSTS = ["*"] if os.getenv("FLY_ENV") else []
+ALLOWED_HOSTS = ["*"]
 # Application definition
 
 INSTALLED_APPS = [
