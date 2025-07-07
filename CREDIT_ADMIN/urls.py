@@ -20,6 +20,7 @@ from django.urls import path, include
 from CREDIT_APP_01 import debtor_views
 
 urlpatterns = [
+    path("healthz/", debtor_views.health_check),  # ✅ Global route, visible to Fly.io
     path("admin/", admin.site.urls),
     path("creditapp/", include("CREDIT_APP_01.urls")),
     path("", debtor_views.home, name="home"),

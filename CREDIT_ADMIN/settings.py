@@ -100,11 +100,19 @@ load_dotenv()
 #         ssl_require=True,  # important!
 #     )
 # }
-DATABASES = {
-    "default": dj_database_url.config(
-        default=os.getenv("CREDIT_DB_URL"), conn_max_age=600, ssl_require=True
-    )
-}
+# DATABASES = {
+#     "default": dj_database_url.config(
+#         default=os.getenv("CREDIT_DB_URL"), conn_max_age=600, ssl_require=True
+#     )
+# }
+try:
+    DATABASES = {
+        "default": dj_database_url.config(
+            default=os.getenv("CREDIT_DB_URL"), conn_max_age=600, ssl_require=True
+        )
+    }
+except Exception as e:
+    print(f"DB config error: {e}")
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
 
