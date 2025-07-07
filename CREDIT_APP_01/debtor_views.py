@@ -3,6 +3,10 @@ from django.shortcuts import render
 from .services.references_services import NewDebtorReferenceService
 
 
+def health_check(request):
+    return JsonResponse({"status": "ok"})
+
+
 # Create your views here.
 def home(request):
     try:
